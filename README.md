@@ -2,11 +2,11 @@
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Research Integrity](https://img.shields.io/badge/Research-Integrity%20Verified-green.svg)]()
+
 
 **A watermarking framework for diffusion models using orthogonal projection and score function geometry.**
 
-> **Research Integrity Statement:** All experimental results in this repository are real and computationally generated. No data is fabricated. Complete source code, models, and data generation scripts are provided for full reproducibility.
+
 
 ---
 
