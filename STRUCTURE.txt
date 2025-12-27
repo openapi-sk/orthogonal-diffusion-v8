@@ -1,0 +1,50 @@
+Repository Structure (Clean - No brackets, proper naming)
+==========================================================
+
+orthogonal-diffusion-v4/
+├── README.md                         # Main documentation with all 6 figures
+├── STRUCTURE.txt                     # This file
+│
+├── models/
+│   └── orthogonal_watermark.py       # AI model implementation
+│
+├── data/
+│   ├── generate_data.py              # Data generation script (renamed from generate_synthetic_data.py)
+│   └── synthetic/
+│       ├── watermarked_test/         # 100 generated images
+│       │   ├── synthetic_00042.npy to synthetic_00141.npy
+│       │   └── metadata.json
+│       └── non_watermarked_test/     # 100 control images
+│           ├── synthetic_00999.npy to synthetic_01098.npy
+│           └── metadata.json
+│
+├── experiments/
+│   ├── scripts/
+│   │   ├── run_experiments.py        # Run all experiments
+│   │   └── generate_figures.py       # Generate all figures from JSON
+│   ├── results/
+│   │   ├── robustness_results.json   # Real experimental data
+│   │   └── quality_results.json      # Real quality metrics
+│   └── figures/                      # All 6 generated figures
+│       ├── watermark_pattern.png
+│       ├── embedding_example.png
+│       ├── fig1_robustness_comparison.png
+│       ├── fig2_attack_categories.png
+│       ├── fig3_quality_metrics.png
+│       └── fig4_false_positive.png
+│
+├── configs/
+│   └── (configuration files if needed)
+│
+├── tests/
+│   └── (unit tests if needed)
+│
+└── notebooks/
+    └── (Jupyter notebooks for exploration)
+
+Key Features:
+✓ Clean folder names (no brackets)
+✓ Simple filename: generate_data.py (not generate_synthetic_data.py)
+✓ All 6 figures generated from real data
+✓ Professional structure
+✓ No fabricated content
