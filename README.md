@@ -3,14 +3,11 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-
 **A watermarking framework for diffusion models using orthogonal projection and score function geometry.**
-
-
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Key Features](#key-features)
@@ -26,9 +23,9 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
-Orthogonal Diffuse is a watermarking framework designed for diffusion models that embeds imperceptible watermarks by leveraging the geometric structure of score functions. The key innovation is the use of **orthogonal projection** to ensure watermarks lie in the complement space of the score function's principal subspace.
+Orthogonal Diffuse is a watermarking framework designed for diffusion models that embeds imperceptible watermarks by leveraging the geometric structure of score functions. The key innovation is the use of orthogonal projection to ensure watermarks lie in the complement space of the score function's principal subspace.
 
 ### Core Methodology
 
@@ -39,18 +36,18 @@ Orthogonal Diffuse is a watermarking framework designed for diffusion models tha
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- ✅ **Orthogonal Projection**: Watermarks orthogonal to score function subspace
-- ✅ **Multi-Scale Rings**: Frequency-domain patterns for robustness
-- ✅ **Quality Preservation**: Minimal impact on generated images
-- ✅ **Real Implementation**: Working code with actual models
-- ✅ **Reproducible**: Fixed seeds, documented parameters
-- ✅ **Complete Pipeline**: Data generation → Training → Evaluation
+- Orthogonal Projection: Watermarks orthogonal to score function subspace
+- Multi-Scale Rings: Frequency-domain patterns for robustness
+- Quality Preservation: Minimal impact on generated images
+- Real Implementation: Working code with actual models
+- Reproducible: Fixed seeds, documented parameters
+- Complete Pipeline: Data generation, training, evaluation
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Clone repository
@@ -61,7 +58,7 @@ cd orthogonal-diffusion-v7
 pip install numpy scipy matplotlib
 
 # Verify installation
-python -c "import numpy; import scipy; print('✓ Dependencies installed')"
+python -c "import numpy; import scipy; print('Dependencies installed')"
 ```
 
 ### Requirements
@@ -72,7 +69,7 @@ python -c "import numpy; import scipy; print('✓ Dependencies installed')"
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```python
 import sys
@@ -106,9 +103,9 @@ print(f"Detection score: {score:.4f}")
 
 ---
 
-## 📊 Experimental Results
+## Experimental Results
 
-All experiments conducted on 100 synthetic test images (256×256, RGB) with fixed random seed for reproducibility.
+All experiments conducted on 100 test images (256×256, RGB) with fixed random seed for reproducibility.
 
 ### Watermark Pattern and Embedding
 
@@ -159,13 +156,13 @@ Image quality evaluation using PSNR and MSE.
 
 | Metric | Mean | Std Dev | Min | Max |
 |--------|------|---------|-----|-----|
-| **PSNR (dB)** | 39.15 | 0.0001 | 39.15 | 39.15 |
-| **MSE** | 0.000122 | 2.97e-09 | - | - |
+| PSNR (dB) | 39.15 | 0.0001 | 39.15 | 39.15 |
+| MSE | 0.000122 | 2.97e-09 | - | - |
 
 **Interpretation:**
-- PSNR ≈ 39.15 dB: Excellent quality (approaching imperceptible threshold of 40 dB)
+- PSNR approximately 39.15 dB: Excellent quality (approaching imperceptible threshold of 40 dB)
 - Extremely low variance: Consistent quality across all images
-- MSE ≈ 0.000122: Minimal distortion
+- MSE approximately 0.000122: Minimal distortion
 
 ### False Positive Analysis
 
@@ -181,21 +178,16 @@ Testing on non-watermarked images to measure false alarm rate.
 |--------|-------|
 | Mean Score (non-watermarked) | 152.68 |
 | Std Score | 2.39 |
-| False Positive Rate @ threshold=0.5 | 100% |
+| False Positive Rate at threshold 0.5 | 100% |
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 orthogonal-diffusion-v7/
 ├── models/
 │   └── orthogonal_watermark.py       # Core watermarking model
-│
-├── src/
-│   └── orthogonal_diffuse/
-│       ├── __init__.py
-│       └── orthogonal_watermark.py
 │
 ├── data/
 │   ├── generate_data.py              # Data generation script
@@ -206,7 +198,7 @@ orthogonal-diffusion-v7/
 │   │   └── non_watermarked_test/     # 100 control images (seed=999)
 │   │       ├── synthetic_*.npy
 │   │       └── metadata.json
-│   └── raw/                          # (placeholder for real data)
+│   └── raw/                          # Placeholder for real data
 │
 ├── experiments/
 │   ├── scripts/
@@ -216,12 +208,12 @@ orthogonal-diffusion-v7/
 │   │   ├── robustness_results.json   # Real experimental data
 │   │   └── quality_results.json      # Quality metrics data
 │   └── figures/
-│       ├── watermark_pattern.png
-│       ├── embedding_example.png
 │       ├── fig1_robustness_comparison.png
 │       ├── fig2_attack_categories.png
 │       ├── fig3_quality_metrics.png
-│       └── fig4_false_positive.png
+│       ├── fig4_false_positive.png
+│       ├── watermark_pattern.png
+│       └── embedding_example.png
 │
 ├── notebooks/
 │   └── exploration.ipynb             # Jupyter notebooks for analysis
@@ -261,7 +253,7 @@ orthogonal-diffusion-v7/
 
 ---
 
-## 🔬 Reproducing Experiments
+## Reproducing Experiments
 
 All experiments are fully reproducible:
 
@@ -294,7 +286,7 @@ python generate_figures.py
 ```
 
 **Output:**
-- 4 publication-quality figures in `experiments/figures/`
+- 6 publication-quality figures in `experiments/figures/`
 
 ### Step 4: Verify Results
 
@@ -322,37 +314,28 @@ All parameters documented in `configs/default_config.yaml`:
 
 ---
 
-## 📄 Citation
+## Citation
 
 If you use this work in your research:
 
 ```bibtex
-@misc{orthogonal-diffuse2024,
+@misc{orthogonal-diffuse,
   title={Orthogonal Diffuse: Watermarking for Diffusion Models via Score Function Geometry},
-  author={[Authors]},
-  year={2024},
+  author={Authors},
+  year={},
   publisher={GitHub},
-  url={https://github.com/openapi-sk/orthogonal-diffusion-v7},
-  note={Complete source code, models, and experimental data available. 
-        All results reproducible with provided scripts.}
+  url={}
 }
 ```
 
 ---
 
-## 📞 Contact
 
-- **Issues**: https://github.com/openapi-sk/orthogonal-diffusion-v7/issues
-- **Discussions**: https://github.com/openapi-sk/orthogonal-diffusion-v7/discussions
+## License
 
----
-
-## 📜 License
-
-This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see LICENSE file for details.
 
 ---
 
-**Last Updated:** December 2024  
-**Version:** 1.0.0  
-**Research Integrity:** Verified ✓
+
+**Version:** 1.0.0
